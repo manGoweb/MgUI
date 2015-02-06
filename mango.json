@@ -1,0 +1,21 @@
+{
+  "src_folder": "src",
+  "dist_folder": "dist",
+  "styles": [
+    "src/styles/screen.styl"
+  ],
+  "scripts": [
+    "src/scripts/index.js"
+  ],
+  "images": [
+    "src/images/**/*.{jpg,png,svg}"
+  ],
+  "static": null,
+  "templates": [
+    "src/**/*.{html,jade}"
+  ],
+  "dependencies": [
+    "jquery"
+  ],
+  "watch": null
+}
