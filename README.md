@@ -1,8 +1,15 @@
 `mango-cli` project example
 ===========================
 
-1) Clone this.
-2) Do you have `mango-cli` installed globally? (`npm install -g mango-cli`)
-3) In this directory `mango install`
-4) You are now ready
-5) `mango dev`
+Do you have `mango-cli` installed globally?
+
+If not: `npm install -g mango-cli`
+
+Init your project
+-----------------
+
+Clone this repo or just `mango init your-project-directory-name`.
+
+Go to that directory. Install project's dependencies `mango install`.
+
+Oh, that's it? Run `mango dev` and your browser should start up.
