@@ -29,5 +29,6 @@
   },
   "hooks": {
     "init": "mango install"
-  }
+  },
+  "version": ">=0.17"
 }
