@@ -2,20 +2,32 @@
   "src_folder": "src",
   "dist_folder": "dist",
   "styles": [
-    "src/styles/screen.styl"
+    "src/styles/index.styl",
+    "src/styles/oldie.styl",
+    "src/styles/print.styl"
   ],
   "scripts": [
-    "src/scripts/index.js"
+    "src/scripts/index.es6"
   ],
   "images": [
     "src/images/**/*.{jpg,png,svg}"
   ],
-  "static": null,
+  "static": [
+    "src/fonts/**",
+    "node_modules/lt-ie-9/lt-ie-9.min.js"
+  ],
   "templates": [
-    "src/**/*.{html,jade}"
+    "src/templates/*.jade"
   ],
   "dependencies": [
+    "lt-ie-9",
+    "stylus-normalize",
     "jquery"
   ],
-  "watch": null
+  "data": {
+    "global": "src/data/global.json"
+  },
+  "hooks": {
+    "init": "mango install"
+  }
 }
