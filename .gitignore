@@ -5,8 +5,8 @@
 ._*
 .Trashes
 
-/node_modules
-/npm-debug.log
+node_modules
+npm-debug.log
 
 /dist
-/mango.local.json
+mango.local.json
