@@ -7,29 +7,46 @@ var $ = jQuery
  * - dependes on jQuery.on() for attaching listeners (can be replaced with Zepto, Gator, etc.)
  *
  * @abstract
+ * @class
+ * @module component
  *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
 class Component {
 
 	/**
+	 * @constructor
 	 * @param {HTMLElement} element
-	 * @param {Object} data
+	 * @param {object} data
 	 */
 	constructor(element, data = {}) {
+		/** @type {HTMLElement} */
 		this.el = element
+		/** @type {jQuery} */
 		this.$el = $(element)
+		/** @type {object|null} */
 		this.data = data
 
 		this.attachListeners()
 	}
 
 	/**
-	 * Assign event handlers from this.listeners property
+	 * Component listeners
 	 *
 	 * Format:
 	 * 	- "type": "handlerName"
 	 * 	- "type<space>.selector": "handlerName"
+	 *
+	 * @param {Component~eventHandler} event handler which is a component method
+	 */
+	get listeners() {
+		return {
+			// 'click .example-child': 'handleClick'
+		}
+	}
+
+	/**
+	 * Assign event handlers from this.listeners property
 	 */
 	attachListeners() {
 		let self = this
@@ -47,6 +64,14 @@ class Component {
 				selector = split[2]
 			}
 
+			/**
+			 * Handler called when an event occured
+			 *
+			 * @callback Component~eventHandler
+			 * @param {object} event - an event object
+			 * @param {Component} self - currrent instance
+			 * @this {Element} - an element that catched the event
+			 */
 			let listener = function(e) {
 				callback.call(this, e, self)
 			}
