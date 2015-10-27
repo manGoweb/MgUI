@@ -52,9 +52,9 @@ class Component {
 			}
 
 			if(selector){
-				$(this.el).on(type, selector, listener)
+				this.$el.on(type, selector, listener)
 			} else {
-				$(this.el).on(type, listener)
+				this.$el.on(type, listener)
 			}
 		}
 	}
