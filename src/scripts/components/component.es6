@@ -7,7 +7,7 @@ var $ = jQuery
  * - dependes on jQuery.on() for attaching listeners (can be replaced with Zepto, Gator, etc.)
  *
  * @abstract
- * 
+ *
  * @author Matěj Šimek <email@matejsimek.com> (http://www.matejsimek.com)
  */
 class Component {
@@ -18,6 +18,7 @@ class Component {
 	 */
 	constructor(element, data = {}) {
 		this.el = element
+		this.$el = $(element)
 		this.data = data
 
 		this.attachListeners()
@@ -56,6 +57,17 @@ class Component {
 				$(this.el).on(type, listener)
 			}
 		}
+	}
+
+	/**
+	 * Returns a child
+	 * @param  {string} CSS selector
+	 * @return {jQuery|null}
+	 */
+	child(selector) {
+		var result = this.$el.find(selector)
+		if(!result.length) return null
+		else return result.eq(0)
 	}
 
 }
