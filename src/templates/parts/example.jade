@@ -1,5 +1,9 @@
+include ../mixins/shape
+
 .example Example component
-	button.example-child with some action
+	button.example-child
+		+shape('example').example-shape
+		span.example-text with some action
 
 script.
 	initComponents.push({
