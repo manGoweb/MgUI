@@ -23,9 +23,12 @@ html
 		link(rel='stylesheet', href='styles/oldie.css', media='screen')
 		script(src='node_modules/lt-ie-9/lt-ie-9.min.js')
 		<![endif]-->
-		
+
 		// Queue of JS components to initialize
-		script initComponents = []
+		script.
+			initComponents = [
+				{ name: 'shapes', data: { url: '/images/shapes.svg' } }
+			]
 
 	body
 

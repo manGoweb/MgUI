@@ -10,10 +10,11 @@
     "src/scripts/index.es6"
   ],
   "images": [
-    "src/images/**/*.{jpg,png,svg}"
+    "src/images/**/*.{jpg,png}"
   ],
   "static": [
     "src/fonts/**",
+    "src/images/**/*.svg",
     "node_modules/lt-ie-9/lt-ie-9.min.js"
   ],
   "templates": [
