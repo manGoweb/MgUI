@@ -1,4 +1,5 @@
-var $ = jQuery
+var $ = window.jQuery
+var eventSplitter = /^(\S+)\s*(.*)$/
 
 /**
  * Abstract component class
@@ -50,7 +51,6 @@ class Component {
 	 */
 	attachListeners() {
 		let self = this
-		let eventSplitter = /^(\S+)\s*(.*)$/
 		let listeners = this.listeners
 
 		for(let event in listeners) {
@@ -70,10 +70,11 @@ class Component {
 			 * @callback Component~eventHandler
 			 * @param {object} event - an event object
 			 * @param {Component} self - currrent instance
+			 * @param {Object} data - optional data passed with event
 			 * @this {Element} - an element that catched the event
 			 */
-			let listener = function(e) {
-				callback.call(this, e, self)
+			let listener = function(e, data) {
+				callback(e, self, data)
 			}
 
 			if(selector){
@@ -81,6 +82,24 @@ class Component {
 			} else {
 				this.$el.on(type, listener)
 			}
+		}
+	}
+
+	/**
+	 * Remove event listeners
+	 */
+	detachListeners() {
+		this.$el.off()
+	}
+
+	/**
+	 * Gracefully destroy current instance properties
+	 */
+	destroy() {
+		this.detachListeners()
+
+		for (let prop in this) {
+			this[prop] = null
 		}
 	}
 
