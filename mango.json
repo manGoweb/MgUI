@@ -12,9 +12,14 @@
   "images": [
     "src/images/**/*.{jpg,png}"
   ],
+  "sprites": [
+    {
+      "path": "src/images/sources/*.svg",
+      "name": false
+    }
+  ],
   "static": [
     "src/fonts/**",
-    "src/images/**/*.svg",
     "node_modules/lt-ie-9/lt-ie-9.min.js"
   ],
   "templates": [
