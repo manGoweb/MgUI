@@ -69,12 +69,12 @@ class Component {
 			 *
 			 * @callback Component~eventHandler
 			 * @param {object} event - an event object
-			 * @param {Component} self - currrent instance
+			 * @param {Component} self - current instance
 			 * @param {Object} data - optional data passed with event
-			 * @this {Element} - an element that catched the event
+			 * @this {Element} - an element that caught the event
 			 */
 			let listener = function(e, data) {
-				callback(e, self, data)
+				callback.call(this, e, self, data)
 			}
 
 			if(selector){
