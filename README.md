@@ -1,13 +1,4 @@
-`mango-cli` project example
-===========================
-
-Do you have `mango-cli` installed globally?
-
-If not: `npm install -g mango-cli`
-
-Init your project
------------------
-
-Run command `mango init your-project-directory-name`.
-
-Oh, that's it? Go to that directory, run `mango dev` and your browser should start up.
+<p align="center">
+  <img src="src/images/logo.png" alt="MgUI" align="middle" /><br>
+  <a href="https://mangoweb.github.io/MgUI/">Visit mangoweb.github.io/MgUI</a>
+</p>
