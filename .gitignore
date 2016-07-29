@@ -8,5 +8,4 @@
 node_modules
 npm-debug.log
 
-/dist
 mango.local.json
