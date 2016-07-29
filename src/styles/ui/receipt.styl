@@ -1,0 +1,45 @@
+.receipt
+	$border = solid 1px $mgBorderLightGrey
+	display inline-block
+	vertical-align top
+	border $border
+	border-radius $mgBigRadius
+	overflow hidden
+	width 15em
+	max-width 90vw
+	margin-bottom .3em
+	padding 0 .75em
+
+	&-head
+	&-body
+	&-foot
+		padding .5em 0
+
+	&-head
+		border-bottom $border
+		color $mgTextGrey
+
+	&-body
+		font-size .95em
+		line-height 1.4
+
+	&-foot
+		border-top $border
+		&-label
+			float left
+			color $mgTextGrey
+		&-sum
+			float right
+			font-weight 500
+		&:after
+			display block
+			content ''
+			clear both
+
+	&-key
+		margin-top .5em
+		color $mgTextGrey
+
+	&-value
+		font-weight 500
+

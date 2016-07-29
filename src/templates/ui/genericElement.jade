@@ -1,0 +1,18 @@
+include button.jade
+
+mixin genericElement(props={})
+	.genericElement
+		if props.imageUrl
+			.genericElement-image(style="background-image:url("+props.imageUrl+")")
+		if props.title || props.subtitle || props.itemUrl
+			.genericElement-text
+				if props.title
+					.genericElement-title=props.title
+				if props.subtitle
+					.genericElement-subtitle=props.subtitle
+				if props.itemUrl
+					.genericElement-itemUrl=props.itemUrl.match(/\/\/([^\/]+)\//)[1]
+		if props.buttons && props.buttons.length > 0
+			.genericElement-buttons
+				each button in props.buttons
+					+button(button)

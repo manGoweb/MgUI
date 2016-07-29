@@ -1,0 +1,13 @@
+include timestamp.jade
+include avatar.jade
+
+mixin threadListElement(props)
+	.threadListElement(class="is-" + props.threadStatus)
+		.threadListElement-avatar
+			+avatar(props.avatarUrl, { status: props.avatarStatus })
+		.threadListElement-info
+			.threadListElement-timestamp
+				+timestamp(props.timestamp)
+			.threadListElement-label=props.label
+			.threadListElement-lead=props.lead
+			.threadListElement-status(class="type-" + props.threadStatus)

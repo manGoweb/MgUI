@@ -1,0 +1,5 @@
+mixin avatar(url, props = {})
+	.avatar
+		img.avatar-img(src=url)
+		if props.status
+			.avatar-badge(class=cl([ "type-" + props.status ]))

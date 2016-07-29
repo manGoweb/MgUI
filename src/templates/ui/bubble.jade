@@ -1,0 +1,8 @@
+include avatar.jade
+
+mixin bubble(title, props = {})
+	.bubble-wrap(class=cl([ props.isAuthored && "is-authored", props.avatarUrl && "has-avatar" ]))
+		if props.avatarUrl
+			.bubble-avatar
+				+avatar(props.avatarUrl, { status: props.status })
+		.bubble=title

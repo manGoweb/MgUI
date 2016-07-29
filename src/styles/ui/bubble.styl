@@ -1,0 +1,30 @@
+.bubble
+	display inline-block
+	background $mgLightGrey
+	padding .5em .8em
+	border-radius $mgBigRadius
+	text-align left
+	max-width 75%
+	margin-bottom .3em
+
+	line-height 1.4
+
+	&-wrap.has-avatar
+		position relative
+		padding-left $mgAvatarSize * 1.2
+
+	&-wrap.is-authored
+		text-align right
+
+	&-wrap.is-authored &
+		background $mgBlue
+		color $mgTextWhite
+		margin-left auto
+
+	&-wrap > &-avatar
+		position absolute
+		bottom .3em
+		left 0
+		.avatar
+			font-size $mgAvatarSize
+

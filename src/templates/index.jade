@@ -1,18 +1,152 @@
 extends layouts/default
 
-append vars
-	- var page = 'index'
-	- var description = 'Sample project structure used in manGoweb'
+include ui/avatar.jade
+include ui/bubble.jade
+include ui/button.jade
+include ui/genericElement.jade
+include ui/persistentMenu.jade
+include ui/quickReply.jade
+include ui/receipt.jade
+include ui/receiptElement.jade
+include ui/threadList.jade
+include ui/threadListElement.jade
+include ui/timestamp.jade
 
-block content
+include guide/color.jade
+include guide/section.jade
 
-	main.layout(role='main')
+block main
 
-		h1= global.title
+	+section('bubble', true)
+		+bubble("Hi Jack. What are you doing?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+		+bubble("Hi Mary. I'm filling out a job application.", { isAuthored: true })
+		+bubble("Are you finished with school already?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+		+timestamp('9:41 AM', { block: true })
+		+bubble("No. I have one more semester, but it would be great to have a job lined up.", { isAuthored: true })
+		+bubble("Bye.", { isAuthored: true })
 
-		include parts/example
+	+section('genericElement', true)
+		div.genericElementList
+			+genericElement({
+				title: 'Title',
+				subtitle: 'Subtitle',
+				imageUrl: 'https://unsplash.it/400/300?random=1',
+				itemUrl: 'https://unsplash.it/400/300?random=1',
+				buttons: [ 'Option' ]
+			})
+			+genericElement({
+				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				subtitle: 'Voluptate provident unde dolor eum molestiae tempora fugit, praesentium consequatur esse.',
+				imageUrl: 'https://unsplash.it/400/300?random=42',
+				itemUrl: 'https://unsplash.it/400/300?random=42',
+				buttons: [ 'Option', 'Option 2' ]
+			})
+			+genericElement({
+				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				imageUrl: 'https://unsplash.it/400/300?random=43',
+				buttons: [ 'Option' ]
+			})
+			+genericElement({
+				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				buttons: [ 'Option' ]
+			})
+			+genericElement({
+				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				subtitle: 'Praesentium consequatur esse, qui magnam saepe neque veritatis laboriosam maiores sunt adipisci quos. Sit!',
+				imageUrl: 'https://unsplash.it/400/300?random=42',
+				buttons: [ 'Option', 'Option 2', 'Option 3' ]
+			})
 
-		include parts/samplecontent
+	+section('persistentMenu', true)
 
+		.screen.withShadow
+			.conversation
+				+bubble("Hi Jack. What are you doing?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+				+bubble("Hi Mary. I'm filling out a job application.", { isAuthored: true })
+				+bubble("Are you finished with school already?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+				+timestamp('9:41 AM', { block: true })
+				+bubble("No. I have one more semester, but it would be great to have a job lined up.", { isAuthored: true })
+				+bubble("Bye.", { isAuthored: true })
+			+persistentMenuOverlay()
+			+persistentMenu('Hello world')
 
+	+section('timestamp', true)
+		+timestamp('9:41 AM', { block: true })
 
+	+section('avatar', true)
+		+avatar('https://randomuser.me/api/portraits/med/men/80.jpg')
+
+	+section('button', true)
+		+button('Hello world')
+
+	+section('quickReply', true)
+		+quickReply('Red')
+		+quickReply('Green')
+		+quickReply('Blue')
+		+quickReply('Pink')
+
+	+section('receipt > receiptElement', true)
+		+receipt({
+			sum: '$56.14',
+			payment: 'Visa 2345',
+			shipping: [ '1 Hacker Way', 'Menlo Park, CA 94025' ]
+		})
+			+receiptElement({
+				imageUrl: 'https://unsplash.it/500/600/?random=12',
+				title: 'Classic White T-Shirt',
+				subtitle: '100% Soft and Lu...',
+				quantity: 2
+			})
+			+receiptElement({
+				imageUrl: 'https://unsplash.it/500/600/?random=13',
+				title: 'Classic Grey T-Shirt',
+				subtitle: '100% Soft and Lu...',
+			})
+
+	+section('threadList > threadListElement', true)
+		.screen.withShadow
+			+threadList()
+				+threadListElement({
+					timestamp: '2:33 PM',
+					avatarUrl: 'https://unsplash.it/200/200/?random=14',
+					label: 'CNN',
+					lead: "Hi, Marissa, we'll keep you updated.",
+					threadStatus: "unread",
+					avatarStatus: "online",
+				})
+				+threadListElement({
+					timestamp: '2:15 PM',
+					avatarUrl: 'https://unsplash.it/200/200/?random=15',
+					label: 'Peter Zich',
+					lead: 'Peter Zich sent an image',
+					threadStatus: "unread",
+					avatarStatus: "offline",
+				})
+				+threadListElement({
+					timestamp: '1:13 PM',
+					avatarUrl: 'https://unsplash.it/200/200/?random=16',
+					label: 'Spring',
+					lead: "Hi, Marissa, we'll keep you updated.",
+					threadStatus: "read",
+					avatarStatus: "online",
+				})
+				+threadListElement({
+					timestamp: '10:43 AM',
+					avatarUrl: 'https://unsplash.it/200/200/?random=17',
+					label: 'Ryan Cole',
+					lead: 'Peter Zich sent an image',
+					threadStatus: "sent",
+					avatarStatus: "online",
+				})
+
+	+section('Colors')
+		.guide-color-list
+			+color('#0084FF', 'Mg blue')
+			+color('#F1F0F0', 'Mg light grey')
+			+color('#000000', 'Mg text black')
+			+color('#ffffff', 'Mg text white')
+			+color('#929292', 'Mg text grey')
+			+color('#818181', 'Mg text dark grey')
+			+color('#B2B2B2', 'Mg border grey')
+			+color('#037AFF', 'iOS button blue')
+			+color('#F9F9F9', 'iOS nav bar light grey')

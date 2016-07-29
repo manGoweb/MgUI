@@ -1,0 +1,12 @@
+mixin receiptElement(props)
+	.receiptElement
+		if props.imageUrl
+			.receiptElement-image(style="background-image:url("+props.imageUrl+")")
+		.receiptElement-desc
+			if props.title
+				.receiptElement-title=props.title
+			if props.subtitle
+				.receiptElement-subtitle=props.subtitle
+			if props.quantity
+				.receiptElement-subtitle Qty. #{props.quantity}
+

@@ -1,0 +1,20 @@
+include button.jade
+
+mixin persistentMenuOverlay()
+	.persistentMenu-overlay
+
+mixin persistentMenu()
+	nav.persistentMenu
+		header.persistentMenu-head
+			.persistentMenu-title Menu
+			.persistentMenu-closeBtn Close
+		main.persistentMenu-body
+			.persistentMenu-elements
+				.persistentMenu-element
+					+button('Help')
+				.persistentMenu-element
+					+button('Start New Order')
+				.persistentMenu-element
+					+button('View Website')
+
+

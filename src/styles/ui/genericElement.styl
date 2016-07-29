@@ -1,0 +1,44 @@
+.genericElement
+	$border = solid 1px $mgBorderLightGrey
+	display inline-block
+	vertical-align top
+	border $border
+	border-radius $mgSmallRadius
+	overflow hidden
+	width 15em
+	max-width 80vw
+	margin-bottom .3em
+
+	&-image
+		height 0
+		padding-top 52.35602%
+		background-position center center
+		background-size cover
+
+	&-text
+		padding .5em .75em
+		font-size .95em
+		line-height 1.4
+
+	&-title
+		color $mgTextBlack
+		font-weight 500
+
+	&-subtitle
+		color $mgTextDarkGrey
+
+	&-itemUrl
+		color $mgTextLightGrey
+
+	&-buttons
+		.button
+			border-top $border
+			text-align center
+
+	&:first-child
+		border-top-left-radius $mgBigRadius
+		border-bottom-left-radius $mgBigRadius
+
+	&:last-child
+		border-top-right-radius $mgBigRadius
+		border-bottom-right-radius $mgBigRadius

@@ -1,8 +1,7 @@
 doctype html
 block vars
 	- var title = global.title
-	- var description = ''
-	- var keywords = ''
+	- var cl = function(arr) { return arr.filter(n => !!n).join(" ") }
 
 html
 	head
@@ -12,30 +11,12 @@ html
 
 		title=title
 
-		meta(name='description', content=description)
-		meta(name='keywords', content=keywords)
 		meta(name='author', content='manGoweb s.r.o. <info@mangoweb.cz> (http://www.mangoweb.cz')
 
 		link(rel='stylesheet', href='styles/index.css', media='screen')
-		link(rel='stylesheet', href='styles/print.css', media='print')
-
-		<!--[if lt IE 9]>
-		link(rel='stylesheet', href='styles/oldie.css', media='screen')
-		script(src='node_modules/lt-ie-9/lt-ie-9.min.js')
-		<![endif]-->
-
-		// Queue of JS components to initialize
-		script.
-			initComponents = [
-				{ name: 'shapes', data: { url: '/sprites/shapes.svg' } }
-			]
 
 	body
-
-		block header
-		block content
-		block footer
-
-		//- Application init
-		script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', defer)
-		script(src='scripts/index.js', defer)
+		.guide
+			.guide-head
+				img(src="images/logo.svg", alt="MgUI")
+			block main
