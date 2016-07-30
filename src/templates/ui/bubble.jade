@@ -1,8 +1,12 @@
 include avatar.jade
 
-mixin bubble(title, props = {})
-	.bubble-wrap(class=cl([ props.isAuthored && "is-authored", props.avatarUrl && "has-avatar" ]))
+mixin bubble(props = {})
+	.bubble-wrap(class=cl([ props.isOur ? "is-our" : "is-their", props.avatarUrl && "has-avatar" ]))
 		if props.avatarUrl
 			.bubble-avatar
 				+avatar(props.avatarUrl, { status: props.status })
-		.bubble=title
+		.bubble
+			if props.text
+				.bubble-text=props.text
+			if props.imageUrl
+				img.bubble-image(src=props.imageUrl,alt=props.imageUrl)

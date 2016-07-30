@@ -1,0 +1,9 @@
+include avatar.jade
+
+mixin bubbleGroup(props = {})
+	.bubbleGroup(class=cl([ props.isOur ? "is-our" : "is-their", props.avatarUrl && "has-avatar" ]))
+		if props.avatarUrl
+			.bubbleGroup-avatar
+				+avatar(props.avatarUrl, { status: props.status })
+		.bubbleGroup-bubbles
+			block

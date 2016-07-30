@@ -1,30 +1,43 @@
 .bubble
 	display inline-block
 	background $mgLightGrey
-	padding .5em .8em
 	border-radius $mgBigRadius
 	text-align left
 	max-width 75%
-	margin-bottom .3em
+	margin-bottom .2em
+	overflow hidden
 
-	line-height 1.4
+	&-text
+		padding .5em .8em
+		line-height 1.4
 
-	&-wrap.has-avatar
-		position relative
-		padding-left $mgAvatarSize * 1.2
+	&-image
+		max-width 100%
 
-	&-wrap.is-authored
+	.bubbleGroup &-wrap.is-their &
+		border-top-left-radius $mgSmallRadius
+		border-bottom-left-radius $mgSmallRadius
+	.bubbleGroup &-wrap.is-their:first-child &
+		border-top-left-radius $mgBigRadius
+	.bubbleGroup &-wrap.is-their:last-child &
+		border-bottom-left-radius $mgBigRadius
+
+	.bubbleGroup &-wrap.is-our &
+		border-top-right-radius $mgSmallRadius
+		border-bottom-right-radius $mgSmallRadius
+	.bubbleGroup &-wrap.is-our:first-child &
+		border-top-right-radius $mgBigRadius
+	.bubbleGroup &-wrap.is-our:last-child &
+		border-bottom-right-radius $mgBigRadius
+
+	&-wrap
+		line-height 1
+
+	&-wrap.is-our
 		text-align right
 
-	&-wrap.is-authored &
+	&-wrap.is-our &
 		background $mgBlue
 		color $mgTextWhite
 		margin-left auto
-
-	&-wrap > &-avatar
-		position absolute
-		bottom .3em
-		left 0
-		.avatar
-			font-size $mgAvatarSize
 
