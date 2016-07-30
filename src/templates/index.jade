@@ -19,7 +19,7 @@ include guide/section.jade
 
 block main
 
-	+section('bubble', true)
+	+section('.bubble', true)
 		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
 			+bubble({ text: "Hi Jack. What are you doing?" })
 		+timestamp('9:41 AM', { block: true })
@@ -62,7 +62,7 @@ block main
 			+quickReply("Nope")
 			+quickReply("Not sure")
 
-	+section('genericElement', true)
+	+section('.genericElement', true)
 		div.genericElementList
 			+genericElement({
 				title: 'Title',
@@ -94,10 +94,10 @@ block main
 				buttons: [ 'Option', 'Option 2', 'Option 3' ]
 			})
 
-	+section('buttonsBubble', true)
+	+section('.buttonsBubble', true)
 		+buttonsBubble({ text: 'Hello world', buttons: [ 'Option', 'Option 2' ] })
 
-	+section('persistentMenu', true)
+	+section('.persistentMenu', true)
 
 		.screen.with-shadow
 			.screenConversation
@@ -114,22 +114,22 @@ block main
 			.screenOverlay
 			+persistentMenu('Hello world')
 
-	+section('timestamp', true)
+	+section('.timestamp', true)
 		+timestamp('9:41 AM', { block: true })
 
-	+section('avatar', true)
+	+section('.avatar', true)
 		+avatar('https://randomuser.me/api/portraits/med/men/80.jpg')
 
-	+section('button', true)
+	+section('.button', true)
 		+button('Hello world')
 
-	+section('quickReply', true)
+	+section('.quickReply', true)
 		+quickReply('Red')
 		+quickReply('Green')
 		+quickReply('Blue')
 		+quickReply('Pink')
 
-	+section('receipt > receiptElement', true)
+	+section('.receipt > .receiptElement', true)
 		+receipt({
 			sum: '$56.14',
 			payment: 'Visa 2345',
@@ -147,7 +147,7 @@ block main
 				subtitle: '100% Soft and Lu...',
 			})
 
-	+section('threadList > threadListElement', true)
+	+section('.threadList > .threadListElement', true)
 		.screen.with-shadow
 			+threadList()
 				+threadListElement({
