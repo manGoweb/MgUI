@@ -2,6 +2,7 @@ extends layouts/default
 
 include ui/avatar.jade
 include ui/bubble.jade
+include ui/bubbleGroup.jade
 include ui/button.jade
 include ui/genericElement.jade
 include ui/persistentMenu.jade
@@ -18,32 +19,64 @@ include guide/section.jade
 block main
 
 	+section('bubble', true)
-		+bubble("Hi Jack. What are you doing?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
-		+bubble("Hi Mary. I'm filling out a job application.", { isAuthored: true })
-		+bubble("Are you finished with school already?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+			+bubble({ text: "Hi Jack. What are you doing?" })
+		+bubbleGroup({ isOur: true})
+			+bubble({ text: "Hi Mary. I'm filling out a job application.", isOur: true })
+		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+			+bubble({ imageUrl: "https://unsplash.it/400/300?random=" + Math.random() })
+			+bubble({ text: "Are you finished with school already?" })
+			+bubble({ text: "I can look for something." })
+		div.genericElementList
+			+genericElement({
+				title: 'Title',
+				subtitle: 'Subtitle',
+				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
+				itemUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
+				buttons: [ 'Option' ]
+			})
+			+genericElement({
+				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				subtitle: 'Voluptate provident unde dolor eum molestiae tempora fugit, praesentium consequatur esse.',
+				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
+				itemUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
+				buttons: [ 'Option', 'Option 2' ]
+			})
+			+genericElement({
+				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
+				buttons: [ 'Option' ]
+			})
 		+timestamp('9:41 AM', { block: true })
-		+bubble("No. I have one more semester, but it would be great to have a job lined up.", { isAuthored: true })
-		+bubble("Bye.", { isAuthored: true })
+		+bubbleGroup({ isOur: true})
+			+bubble({ text: "No. I have one more semester, but it would be great to have a job lined up.", isOur: true })
+			+bubble({ text: "Bye.", isOur: true })
+		+bubbleGroup({ isOur: false})
+			+bubble({ text: "Really?" })
+		.quickReplyList
+			+quickReply("Yes, really")
+			+quickReply("Nope")
+			+quickReply("Not sure")
 
 	+section('genericElement', true)
 		div.genericElementList
 			+genericElement({
 				title: 'Title',
 				subtitle: 'Subtitle',
-				imageUrl: 'https://unsplash.it/400/300?random=1',
-				itemUrl: 'https://unsplash.it/400/300?random=1',
+				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
+				itemUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
 				buttons: [ 'Option' ]
 			})
 			+genericElement({
 				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 				subtitle: 'Voluptate provident unde dolor eum molestiae tempora fugit, praesentium consequatur esse.',
-				imageUrl: 'https://unsplash.it/400/300?random=42',
-				itemUrl: 'https://unsplash.it/400/300?random=42',
+				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
+				itemUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
 				buttons: [ 'Option', 'Option 2' ]
 			})
 			+genericElement({
 				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
-				imageUrl: 'https://unsplash.it/400/300?random=43',
+				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
 				buttons: [ 'Option' ]
 			})
 			+genericElement({
@@ -53,7 +86,7 @@ block main
 			+genericElement({
 				title: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
 				subtitle: 'Praesentium consequatur esse, qui magnam saepe neque veritatis laboriosam maiores sunt adipisci quos. Sit!',
-				imageUrl: 'https://unsplash.it/400/300?random=42',
+				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
 				buttons: [ 'Option', 'Option 2', 'Option 3' ]
 			})
 
@@ -61,12 +94,17 @@ block main
 
 		.screen.withShadow
 			.conversation
-				+bubble("Hi Jack. What are you doing?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
-				+bubble("Hi Mary. I'm filling out a job application.", { isAuthored: true })
-				+bubble("Are you finished with school already?", { avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+				+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+					+bubble({ text: "Hi Jack. What are you doing?" })
+				+bubbleGroup({ isOur: true})
+					+bubble({ text: "Hi Mary. I'm filling out a job application.", isOur: true })
+				+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+					+bubble({ text: "Are you finished with school already?" })
+					+bubble({ text: "I can look for something." })
 				+timestamp('9:41 AM', { block: true })
-				+bubble("No. I have one more semester, but it would be great to have a job lined up.", { isAuthored: true })
-				+bubble("Bye.", { isAuthored: true })
+				+bubbleGroup({ isOur: true})
+					+bubble({ text: "No. I have one more semester, but it would be great to have a job lined up.", isOur: true })
+					+bubble({ text: "Bye.", isOur: true })
 			+persistentMenuOverlay()
 			+persistentMenu('Hello world')
 
@@ -92,13 +130,13 @@ block main
 			shipping: [ '1 Hacker Way', 'Menlo Park, CA 94025' ]
 		})
 			+receiptElement({
-				imageUrl: 'https://unsplash.it/500/600/?random=12',
+				imageUrl: 'https://unsplash.it/500/600/?random=' + Math.random(),
 				title: 'Classic White T-Shirt',
 				subtitle: '100% Soft and Lu...',
 				quantity: 2
 			})
 			+receiptElement({
-				imageUrl: 'https://unsplash.it/500/600/?random=13',
+				imageUrl: 'https://unsplash.it/500/600/?random=' + Math.random(),
 				title: 'Classic Grey T-Shirt',
 				subtitle: '100% Soft and Lu...',
 			})
@@ -108,7 +146,7 @@ block main
 			+threadList()
 				+threadListElement({
 					timestamp: '2:33 PM',
-					avatarUrl: 'https://unsplash.it/200/200/?random=14',
+					avatarUrl: 'https://unsplash.it/200/200/?random=' + Math.random(),
 					label: 'CNN',
 					lead: "Hi, Marissa, we'll keep you updated.",
 					threadStatus: "unread",
@@ -116,7 +154,7 @@ block main
 				})
 				+threadListElement({
 					timestamp: '2:15 PM',
-					avatarUrl: 'https://unsplash.it/200/200/?random=15',
+					avatarUrl: 'https://unsplash.it/200/200/?random=' + Math.random(),
 					label: 'Peter Zich',
 					lead: 'Peter Zich sent an image',
 					threadStatus: "unread",
@@ -124,7 +162,7 @@ block main
 				})
 				+threadListElement({
 					timestamp: '1:13 PM',
-					avatarUrl: 'https://unsplash.it/200/200/?random=16',
+					avatarUrl: 'https://unsplash.it/200/200/?random=' + Math.random(),
 					label: 'Spring',
 					lead: "Hi, Marissa, we'll keep you updated.",
 					threadStatus: "read",
@@ -132,7 +170,7 @@ block main
 				})
 				+threadListElement({
 					timestamp: '10:43 AM',
-					avatarUrl: 'https://unsplash.it/200/200/?random=17',
+					avatarUrl: 'https://unsplash.it/200/200/?random=' + Math.random(),
 					label: 'Ryan Cole',
 					lead: 'Peter Zich sent an image',
 					threadStatus: "sent",
