@@ -19,6 +19,7 @@
     }
   ],
   "static": [
+    "src/favicon.*",
     "src/fonts/**",
     "src/images/*.svg",
     "node_modules/lt-ie-9/lt-ie-9.min.js"
