@@ -1,13 +1,15 @@
+@require 'card'
+
 .genericElement
+	$card()
 	$border = solid 1px $mgBorderLightGrey
-	display inline-block
-	vertical-align top
-	border $border
-	border-radius $mgSmallRadius
-	overflow hidden
 	width 15em
 	max-width 80vw
 	margin-bottom .3em
+	border $border
+
+	&:not(:last-child)
+		margin-right .1em
 
 	&-image
 		height 0
@@ -30,15 +32,14 @@
 	&-itemUrl
 		color $mgTextLightGrey
 
-	&-buttons
-		.button
-			border-top $border
-			text-align center
+	&-buttons .button
+		border-top $border
+		text-align center
 
-	&:first-child
-		border-top-left-radius $mgBigRadius
-		border-bottom-left-radius $mgBigRadius
+	&:not(:first-child)
+		$join-tl()
+		$join-bl()
 
-	&:last-child
-		border-top-right-radius $mgBigRadius
-		border-bottom-right-radius $mgBigRadius
+	&:not(:last-child)
+		$join-tr()
+		$join-br()

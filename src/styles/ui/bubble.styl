@@ -1,11 +1,10 @@
+@require "card"
+
 .bubble
-	display inline-block
+	$card()
 	background $mgLightGrey
-	border-radius $mgBigRadius
-	text-align left
 	max-width 85%
 	margin-bottom .2em
-	overflow hidden
 
 	&-text
 		padding .5em .8em
@@ -14,30 +13,6 @@
 	&-image
 		max-width 100%
 
-	.bubbleGroup &-wrap.is-their &
-		border-top-left-radius $mgSmallRadius
-		border-bottom-left-radius $mgSmallRadius
-	.bubbleGroup &-wrap.is-their:first-child &
-		border-top-left-radius $mgBigRadius
-	.bubbleGroup &-wrap.is-their:last-child &
-		border-bottom-left-radius $mgBigRadius
-
-	.bubbleGroup &-wrap.is-our &
-		border-top-right-radius $mgSmallRadius
-		border-bottom-right-radius $mgSmallRadius
-	.bubbleGroup &-wrap.is-our:first-child &
-		border-top-right-radius $mgBigRadius
-	.bubbleGroup &-wrap.is-our:last-child &
-		border-bottom-right-radius $mgBigRadius
-
-	&-wrap
-		line-height 1
-
-	&-wrap.is-our
-		text-align right
-
-	&-wrap.is-our &
+	&.is-our
 		background $mgBlue
 		color $mgTextWhite
-		margin-left auto
-

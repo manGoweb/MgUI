@@ -1,10 +1,9 @@
+@require 'card'
+
 .receipt
+	$card()
 	$border = solid 1px $mgBorderLightGrey
-	display inline-block
-	vertical-align top
 	border $border
-	border-radius $mgBigRadius
-	overflow hidden
 	width 15em
 	max-width 90vw
 	margin-bottom .3em
@@ -13,7 +12,7 @@
 	&-head
 	&-body
 	&-foot
-		padding .5em 0
+		padding .75em 0
 
 	&-head
 		border-bottom $border

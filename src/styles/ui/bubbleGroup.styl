@@ -1,12 +1,36 @@
+@require 'card'
+
 .bubbleGroup
 	position relative
 	margin .3em 0
 
-	&.has-avatar
-		padding-left $mgAvatarSize * 1.2
+	padding-left $mgAvatarSize * 1.2
+
+	&:after
+		content ''
+		display block
+		clear both
+
 	&-avatar
 		position absolute
 		bottom .3em
 		left 0
 		.avatar
 			font-size $mgAvatarSize
+
+	&-elements > *
+		clear both
+
+	&.is-their &-elements > *
+		float left
+		&:not(:first-child)
+			$join-tl()
+		&:not(:last-child)
+			$join-bl()
+
+	&.is-our &-elements > *
+		float right
+		&:not(:first-child)
+			$join-tr()
+		&:not(:last-child)
+			$join-br()
