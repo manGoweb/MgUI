@@ -1,10 +1,11 @@
 mixin section(title, code = false)
 	section.section
-		h1.section-title(id=title)
-			if code
-				code=title
-			else
-				| #{title}
+		h1.section-title(id=title.split(" ").join("-"))
+			a(href="#"+title.split(" ").join("-"))
+				if code
+					code=title
+				else
+					| #{title}
 
 		div.section-block
 			block
