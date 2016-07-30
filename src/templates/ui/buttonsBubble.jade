@@ -1,0 +1,9 @@
+include button.jade
+
+mixin buttonsBubble(props = {})
+	.buttonsBubble
+		.buttonsBubble-text=props.text
+		.buttonsBubble-buttons
+			each button in props.buttons
+				.buttonsBubble-button
+					+button(button)
