@@ -2,8 +2,9 @@ extends layouts/default
 
 include ui/avatar.jade
 include ui/bubble.jade
-include ui/bubbleGroup.jade
+include ui/buttonsBubble.jade
 include ui/button.jade
+include ui/bubbleGroup.jade
 include ui/genericElement.jade
 include ui/persistentMenu.jade
 include ui/quickReply.jade
@@ -21,11 +22,14 @@ block main
 	+section('bubble', true)
 		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
 			+bubble({ text: "Hi Jack. What are you doing?" })
+		+timestamp('9:41 AM', { block: true })
 		+bubbleGroup({ isOur: true})
-			+bubble({ text: "Hi Mary. I'm filling out a job application.", isOur: true })
+			+bubble({ text: "Hi Mary.", isOur: true })
+			+bubble({ text: "I'm filling out a job application.", isOur: true })
 		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
 			+bubble({ imageUrl: "https://unsplash.it/400/300?random=" + Math.random() })
 			+bubble({ text: "Are you finished with school already?" })
+			+buttonsBubble({ text: 'Hello world', buttons: [ 'Option', 'Option 2' ] })
 			+bubble({ text: "I can look for something." })
 		div.genericElementList
 			+genericElement({
@@ -47,7 +51,7 @@ block main
 				imageUrl: 'https://unsplash.it/400/300?random=' + Math.random(),
 				buttons: [ 'Option' ]
 			})
-		+timestamp('9:41 AM', { block: true })
+		+timestamp('9:42 AM', { block: true })
 		+bubbleGroup({ isOur: true})
 			+bubble({ text: "No. I have one more semester, but it would be great to have a job lined up.", isOur: true })
 			+bubble({ text: "Bye.", isOur: true })
@@ -90,22 +94,24 @@ block main
 				buttons: [ 'Option', 'Option 2', 'Option 3' ]
 			})
 
+	+section('buttonsBubble', true)
+		+buttonsBubble({ text: 'Hello world', buttons: [ 'Option', 'Option 2' ] })
+
 	+section('persistentMenu', true)
 
-		.screen.withShadow
-			.conversation
+		.screen.with-shadow
+			.screenConversation
+				+timestamp('10:21 AM', { block: true })
 				+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
-					+bubble({ text: "Hi Jack. What are you doing?" })
+					+bubble({ text: "In which class are you studying? " })
 				+bubbleGroup({ isOur: true})
-					+bubble({ text: "Hi Mary. I'm filling out a job application.", isOur: true })
+					+bubble({ text: "I am in Eighth Standard. What about you? ", isOur: true })
 				+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
-					+bubble({ text: "Are you finished with school already?" })
-					+bubble({ text: "I can look for something." })
-				+timestamp('9:41 AM', { block: true })
+					+bubble({ text: "I am in Ninth Standard." })
+					+bubble({ text: "Do you come to school by bus? " })
 				+bubbleGroup({ isOur: true})
-					+bubble({ text: "No. I have one more semester, but it would be great to have a job lined up.", isOur: true })
-					+bubble({ text: "Bye.", isOur: true })
-			+persistentMenuOverlay()
+					+bubble({ text: "Yes. I travel by bus. I have to catch Route No. 24 bus. ", isOur: true })
+			.screenOverlay
 			+persistentMenu('Hello world')
 
 	+section('timestamp', true)
@@ -142,7 +148,7 @@ block main
 			})
 
 	+section('threadList > threadListElement', true)
-		.screen.withShadow
+		.screen.with-shadow
 			+threadList()
 				+threadListElement({
 					timestamp: '2:33 PM',
