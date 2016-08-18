@@ -1,0 +1,25 @@
+{
+  "name": "mgui",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r   <a href=\"https://mangoweb.github.io/MgUI/\"><img src=\"src/images/logo.png\" alt=\"MgUI\" align=\"middle\" /></a><br>\r   <a href=\"https://mangoweb.github.io/MgUI/\">Visit mangoweb.github.io/MgUI</a>\r </p>",
+  "main": "src/styles/ui/index.styl",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "lt-ie-9": "^0.1.0",
+    "stylus-normalize": "^3.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manGoweb/MgUI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manGoweb/MgUI/issues"
+  },
+  "homepage": "https://github.com/manGoweb/MgUI#readme"
+}
