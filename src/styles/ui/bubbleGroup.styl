@@ -4,12 +4,13 @@
 	position relative
 	margin .3em 0
 
-	padding-left $mgAvatarSize * 1.2
-
 	&:after
 		content ''
 		display block
 		clear both
+
+	&.has-avatar
+		padding-left $mgAvatarSize * 1.2
 
 	&-avatar
 		position absolute
