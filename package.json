@@ -1,7 +1,7 @@
 {
   "name": "mgui",
   "version": "1.0.2",
-  "main": "src/styles/ui/index.styl",
+  "main": "index.styl",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
