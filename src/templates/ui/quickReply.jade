@@ -1,2 +1,18 @@
-mixin quickReply(title)
-	.quickReply=title
+mixin quickReply(title, options = {})
+	.mgui-quickReply
+		if options.image
+			.mgui-quickReply-icon(style="background-image:url("+options.image+")")
+		if options.color
+			.mgui-quickReply-icon(style="background-color:"+options.color)
+		if options.location
+			.mgui-quickReply-icon.is-location
+		.mgui-quickReply-title=title
+
+mixin locationQuickReply(title)
+	+quickReply(title, { location: true })
+
+mixin colorQuickReply(title, color)
+	+quickReply(title, { color: color })
+
+mixin imageQuickReply(title, image)
+	+quickReply(title, { image: image })

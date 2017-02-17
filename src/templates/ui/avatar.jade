@@ -1,5 +1,5 @@
 mixin avatar(url, props = {})
-	.avatar
-		img.avatar-img(src=url)
+	.mgui-avatar
+		img.mgui-avatar-img(src=url)
 		if props.status
-			.avatar-badge(class=cl([ "type-" + props.status ]))
+			.mgui-avatar-badge(class=cl([ "type-" + props.status ]))

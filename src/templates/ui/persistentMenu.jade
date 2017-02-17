@@ -1,20 +1,20 @@
 include button.jade
 
 mixin persistentMenuOverlay()
-	.persistentMenu-overlay
+	.mgui-persistentMenu-overlay
 
 mixin persistentMenu()
-	nav.persistentMenu
-		header.persistentMenu-head
-			.persistentMenu-title Menu
-			.persistentMenu-closeBtn Close
-		main.persistentMenu-body
-			.persistentMenu-elements
-				.persistentMenu-element
+	nav.mgui-persistentMenu
+		header.mgui-persistentMenu-head
+			.mgui-persistentMenu-title Menu
+			.mgui-persistentMenu-closeBtn Close
+		main.mgui-persistentMenu-body
+			.mgui-persistentMenu-elements
+				.mgui-persistentMenu-element
 					+button('Help')
-				.persistentMenu-element
+				.mgui-persistentMenu-element
 					+button('Start New Order')
-				.persistentMenu-element
+				.mgui-persistentMenu-element
 					+button('View Website')
 
 

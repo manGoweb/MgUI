@@ -1,12 +1,15 @@
 @require 'card'
 
-.genericElement
+.mgui-genericElement
 	$card()
+	background-color #fff
 	$border = solid 1px $mgBorderLightGrey
 	width 15em
 	max-width 80vw
 	margin-bottom .3em
 	border $border
+	display flex
+	flex-direction column
 
 	&:not(:last-child)
 		margin-right .1em
@@ -21,6 +24,7 @@
 		padding .5em .75em
 		font-size .95em
 		line-height 1.4
+		flex-grow 1
 
 	&-title
 		color $mgTextBlack
@@ -32,9 +36,10 @@
 	&-itemUrl
 		color $mgTextLightGrey
 
-	&-buttons .button
+	&-buttons .mgui-button
 		border-top $border
 		text-align center
+		flex-grow 0
 
 	&:not(:first-child)
 		$join-tl()

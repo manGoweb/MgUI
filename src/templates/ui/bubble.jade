@@ -1,8 +1,8 @@
 include avatar.jade
 
 mixin bubble(props = {})
-	.bubble(class=cl([ props.isOur ? "is-our" : "is-their", props.avatarUrl && "has-avatar" ]))
+	.mgui-bubble(class=cl([ props.isOur ? "is-our" : "is-their", props.avatarUrl && "has-avatar" ]))
 		if props.text
-			.bubble-text=props.text
+			.mgui-bubble-text=props.text
 		if props.imageUrl
-			img.bubble-image(src=props.imageUrl,alt=props.imageUrl)
+			img.mgui-bubble-image(src=props.imageUrl,alt=props.imageUrl)

@@ -1,22 +1,22 @@
 mixin receipt(props={})
-	.receipt
-		.receipt-head Order confirmation
-		.receipt-body
+	.mgui-receipt
+		.mgui-receipt-head Order confirmation
+		.mgui-receipt-body
 			block
 
 			if props.payment
-				.receipt-key Paid with
-				.receipt-value=props.payment
+				.mgui-receipt-key Paid with
+				.mgui-receipt-value=props.payment
 
 			if props.shipping
-				.receipt-key Ship to
-				.receipt-value
+				.mgui-receipt-key Ship to
+				.mgui-receipt-value
 					if typeof props.shipping === "string"
 						| #{props.shipping}
 					else
 						each line in props.shipping
 							| #{line}<br>
 
-		.receipt-foot
-			.receipt-foot-label Total
-			.receipt-foot-sum=props.sum
+		.mgui-receipt-foot
+			.mgui-receipt-foot-label Total
+			.mgui-receipt-foot-sum=props.sum

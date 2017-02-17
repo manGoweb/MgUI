@@ -1,9 +1,9 @@
 include button.jade
 
 mixin buttonsBubble(props = {})
-	.buttonsBubble
-		.buttonsBubble-text=props.text
-		.buttonsBubble-buttons
+	.mgui-buttonsBubble
+		.mgui-buttonsBubble-text=props.text
+		.mgui-buttonsBubble-buttons
 			each button in props.buttons
-				.buttonsBubble-button
+				.mgui-buttonsBubble-button
 					+button(button)

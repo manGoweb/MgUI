@@ -19,19 +19,22 @@ include guide/section.jade
 
 block main
 
-	+section('.bubble', true)
+	+section('.mgui-bubble', true)
 		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
-			+bubble({ text: "Hi Jack. What are you doing?" })
+			+bubble({ text: "You invented something in high school too, right?" })
 		+timestamp('9:41 AM', { block: true })
 		+bubbleGroup({ isOur: true})
-			+bubble({ text: "Hi Mary.", isOur: true })
-			+bubble({ text: "I'm filling out a job application.", isOur: true })
+			+bubble({ text: "An app for an MP3 player that recognizes your taste in music.", isOur: true })
+			+bubble({ text: "Didn't sell it, uploaded it for free.", isOur: true })
+		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
+			+bubble({ text: "For free?" })
+		+bubbleGroup({ isOur: true})
+			+bubble({ text: "Yeah.", isOur: true })
 		+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
 			+bubble({ imageUrl: "https://unsplash.it/400/300?random=" + Math.random() })
-			+bubble({ text: "Are you finished with school already?" })
 			+buttonsBubble({ text: 'Hello world', buttons: [ 'Option', 'Option 2' ] })
 			+bubble({ text: "I can look for something." })
-		div.genericElementList
+		div.mgui-genericElementList
 			+genericElement({
 				title: 'Title',
 				subtitle: 'Subtitle',
@@ -53,17 +56,15 @@ block main
 			})
 		+timestamp('9:42 AM', { block: true })
 		+bubbleGroup({ isOur: true})
-			+bubble({ text: "No. I have one more semester, but it would be great to have a job lined up.", isOur: true })
-			+bubble({ text: "Bye.", isOur: true })
+			+bubble({ text: "Your date looks so familiar to me.", isOur: true })
 		+bubbleGroup({ isOur: false})
-			+bubble({ text: "Really?" })
-		.quickReplyList
-			+quickReply("Yes, really")
-			+quickReply("Nope")
-			+quickReply("Not sure")
+			+bubble({ text: "She looks familiar to a lot of people." })
+		.mgui-quickReplyList
+			+quickReply("What do you mean?")
+			+quickReply("OK")
 
-	+section('.genericElement', true)
-		div.genericElementList
+	+section('.mgui-genericElement', true)
+		div.mgui-genericElementList
 			+genericElement({
 				title: 'Title',
 				subtitle: 'Subtitle',
@@ -94,13 +95,13 @@ block main
 				buttons: [ 'Option', 'Option 2', 'Option 3' ]
 			})
 
-	+section('.buttonsBubble', true)
+	+section('.mgui-buttonsBubble', true)
 		+buttonsBubble({ text: 'Hello world', buttons: [ 'Option', 'Option 2' ] })
 
-	+section('.persistentMenu', true)
+	+section('.mgui-persistentMenu', true)
 
-		.screen.with-shadow
-			.screenConversation
+		.mgui-screen.with-shadow
+			.mgui-screenConversation
 				+timestamp('10:21 AM', { block: true })
 				+bubbleGroup({ isOur: false, avatarUrl: 'https://randomuser.me/api/portraits/med/women/80.jpg' })
 					+bubble({ text: "In which class are you studying? " })
@@ -111,25 +112,27 @@ block main
 					+bubble({ text: "Do you come to school by bus? " })
 				+bubbleGroup({ isOur: true})
 					+bubble({ text: "Yes. I travel by bus. I have to catch Route No. 24 bus. ", isOur: true })
-			.screenOverlay
+			.mgui-screenOverlay
 			+persistentMenu('Hello world')
 
-	+section('.timestamp', true)
+	+section('.mgui-timestamp', true)
 		+timestamp('9:41 AM', { block: true })
 
-	+section('.avatar', true)
+	+section('.mgui-avatar', true)
 		+avatar('https://randomuser.me/api/portraits/med/men/80.jpg')
 
-	+section('.button', true)
+	+section('.mgui-button', true)
 		+button('Hello world')
 
-	+section('.quickReply', true)
-		+quickReply('Red')
-		+quickReply('Green')
-		+quickReply('Blue')
-		+quickReply('Pink')
+	+section('.mgui-quickReply', true)
+		+locationQuickReply('Location')
+		+imageQuickReply('With image', 'https://unsplash.it/500/600/?random=' + Math.random())
+		+colorQuickReply('Green', '#5e5')
+		+colorQuickReply('Blue', '#55e')
+		+colorQuickReply('Pink', 'pink')
+		+quickReply('Something')
 
-	+section('.receipt > .receiptElement', true)
+	+section('.mgui-receipt > .receiptElement', true)
 		+receipt({
 			sum: '$56.14',
 			payment: 'Visa 2345',
@@ -147,8 +150,8 @@ block main
 				subtitle: '100% Soft and Lu...',
 			})
 
-	+section('.threadList > .threadListElement', true)
-		.screen.with-shadow
+	+section('.mgui-threadList > .threadListElement', true)
+		.mgui-screen.with-shadow
 			+threadList()
 				+threadListElement({
 					timestamp: '2:33 PM',
@@ -185,12 +188,19 @@ block main
 
 	+section('Colors')
 		.guide-color-list
-			+color('#0084FF', 'Mg blue')
-			+color('#F1F0F0', 'Mg light grey')
-			+color('#000000', 'Mg text black')
-			+color('#ffffff', 'Mg text white')
-			+color('#929292', 'Mg text grey')
-			+color('#818181', 'Mg text dark grey')
-			+color('#B2B2B2', 'Mg border grey')
-			+color('#037AFF', 'iOS button blue')
-			+color('#F9F9F9', 'iOS nav bar light grey')
+			+color('#0084FF', '$mgBlue')
+			+color('#F1F0F0', '$mgLightGrey')
+			+color('#000000', '$mgTextBlack')
+			+color('#FFFFFF', '$mgTextWhite')
+			+color('#FFFFFF', '$mgBgWhite')
+			+color('#929292', '$mgTextGrey')
+			+color('#818181', '$mgTextDarkGrey')
+			+color('#B2B2B2', '$mgBorderGrey')
+			+color('#EBEBEB', '$mgBorderLightGrey')
+			+color('#B2B2B2', '$mgTextLightGrey')
+
+			+color('#037AFF', '$iosBlue')
+			+color('#F9F9F9', '$iosNavGrey')
+			+color('#C9C9C9', '$iosBorderGrey')
+			+color('#FFFFFF', '$iosBgWhite')
+

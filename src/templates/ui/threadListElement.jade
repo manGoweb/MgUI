@@ -2,12 +2,12 @@ include timestamp.jade
 include avatar.jade
 
 mixin threadListElement(props)
-	.threadListElement(class="is-" + props.threadStatus)
-		.threadListElement-avatar
+	.mgui-threadListElement(class="is-" + props.threadStatus)
+		.mgui-threadListElement-avatar
 			+avatar(props.avatarUrl, { status: props.avatarStatus })
-		.threadListElement-info
-			.threadListElement-timestamp
+		.mgui-threadListElement-info
+			.mgui-threadListElement-timestamp
 				+timestamp(props.timestamp)
-			.threadListElement-label=props.label
-			.threadListElement-lead=props.lead
-			.threadListElement-status(class="type-" + props.threadStatus)
+			.mgui-threadListElement-label=props.label
+			.mgui-threadListElement-lead=props.lead
+			.mgui-threadListElement-status(class="type-" + props.threadStatus)
