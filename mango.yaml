@@ -1,6 +1,6 @@
 ---
 src_folder: src
-dist_folder: dist
+dist_folder: docs
 styles:
 - src/styles/index.sass
 - src/styles/guide.sass
@@ -19,9 +19,9 @@ static:
 templates:
 - src/templates/*.pug
 buildstamp:
-- dist/assets/styles/index.css
-- dist/assets/styles/guide.css
-- dist/assets/scripts/index.js
+- docs/assets/styles/index.css
+- docs/assets/styles/guide.css
+- docs/assets/scripts/index.js
 data:
   global: src/data/global.json
 version: ">=3.1.0"

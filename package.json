@@ -7,9 +7,6 @@
     "lt-ie-9": "^0.1.2"
   },
   "devDependencies": {},
-  "scripts": {
-    "update-gh-pages": "mango build && git push origin :gh-pages && git subtree push --prefix dist origin gh-pages"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/manGoweb/MgUI.git"
