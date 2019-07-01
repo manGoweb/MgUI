@@ -19,9 +19,9 @@ static:
 templates:
 - src/templates/*.pug
 buildstamp:
-- docs/assets/styles/index.css
-- docs/assets/styles/guide.css
-- docs/assets/scripts/index.js
+- docs/styles/index.css
+- docs/styles/guide.css
+- docs/scripts/index.js
 data:
   global: src/data/global.json
 version: ">=3.1.0"
