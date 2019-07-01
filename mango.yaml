@@ -1,0 +1,26 @@
+---
+src_folder: src
+dist_folder: dist
+styles:
+- src/styles/index.styl
+- src/styles/oldie.styl
+- src/styles/print.styl
+scripts:
+- src/scripts/index.es6
+images:
+- src/images/**/*.{jpg,png}
+sprites:
+- path: src/images/sources/*.svg
+  name: false
+static:
+- src/favicon.*
+- src/fonts/**
+- src/images/*.svg
+- node_modules/lt-ie-9/lt-ie-9.min.js
+templates:
+- src/templates/*.pug
+data:
+  global: src/data/global.json
+hooks:
+  init: mango install
+version: ">=3.1.0"
