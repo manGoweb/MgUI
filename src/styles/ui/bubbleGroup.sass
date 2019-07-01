@@ -1,5 +1,3 @@
-@import 'card'
-
 .mgui-bubbleGroup
 	position: relative
 	margin: .3em 0
@@ -26,16 +24,16 @@
 		float: left
 
 		&:not(:first-child)
-			@inclue join-tl
+			@include join-tl
 
 		&:not(:last-child)
-			@inclue join-bl
+			@include join-bl
 
 	&.is-our &-elements > *
 		float: right
 
 		&:not(:first-child)
-			@inclue join-tr
+			@include join-tr
 
 		&:not(:last-child)
-			@inclue join-br
+			@include join-br
