@@ -18,6 +18,10 @@ static:
 - node_modules/lt-ie-9/lt-ie-9.min.js
 templates:
 - src/templates/*.pug
+buildstamp:
+- dist/assets/styles/index.css
+- dist/assets/styles/guide.css
+- dist/assets/scripts/index.js
 data:
   global: src/data/global.json
 version: ">=3.1.0"
