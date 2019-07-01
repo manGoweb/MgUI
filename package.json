@@ -1,11 +1,10 @@
 {
   "name": "mgui",
   "version": "1.1.0",
-  "main": "index.styl",
+  "main": "index.sass",
   "dependencies": {
     "jquery": "^3.4.1",
-    "lt-ie-9": "^0.1.2",
-    "stylus-normalize": "^3.0.3"
+    "lt-ie-9": "^0.1.2"
   },
   "devDependencies": {},
   "scripts": {

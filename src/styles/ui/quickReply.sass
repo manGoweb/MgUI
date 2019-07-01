@@ -1,0 +1,37 @@
+@import 'card'
+
+.mgui-quickReply
+	@include card
+	color: $mgBlue
+	border: solid 1px
+	cursor: pointer
+
+	white-space: nowrap
+
+	&-icon
+		display: inline-block
+		width: 1.35em
+		height: 1.35em
+		margin: .3em
+		margin-left: .35em
+		box-sizing: border-box
+		border-radius: 1em
+		vertical-align: top
+		margin-right: -.5em
+		background: $mgBlue
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+
+		&.is-location
+			background: $mgBlue url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48c3R5bGUgdHlwZT0idGV4dC9jc3MiPi5zdDB7ZmlsbDojZmZmO308L3N0eWxlPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0yNTYsNzYuOGMtNjksMC0xMjUsNTguNi0xMjUsMTMwLjljMCw3Mi4zLDEwNS4zLDIyNy42LDEyNSwyMjcuNlMzODEsMjgwLDM4MSwyMDcuNyAgQzM4MSwxMzUuNCwzMjUsNzYuOCwyNTYsNzYuOHogTTI1NiwyNTljLTMzLjIsMC02MC4xLTI2LjktNjAuMS02MC4yYzAtMzMuMiwyNi45LTYwLjEsNjAuMS02MC4xczYwLjEsMjYuOSw2MC4xLDYwLjEgIEMzMTYuMSwyMzIsMjg5LjIsMjU5LDI1NiwyNTl6Ii8+PC9zdmc+") no-repeat center center
+			background-size: 100%
+
+	&-title
+		display: inline-block
+		padding: .5em .75em
+
+	&.is-hover
+	&:hover
+		background: $mgBlue
+		color: $mgTextWhite

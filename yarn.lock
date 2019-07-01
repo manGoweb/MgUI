@@ -11,8 +11,3 @@ lt-ie-9@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/lt-ie-9/-/lt-ie-9-0.1.2.tgz#4d5013cb7a70c6c65ce667c12d7906c7741699ee"
   integrity sha512-gfASb44++yoclhtO21gIHB0gtbXeij80rIdbeETNMYs4E+e/hpW5JKH/6YurjXOzxmHQtLFC6oSz/BwU4kyjaQ==
-
-stylus-normalize@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/stylus-normalize/-/stylus-normalize-3.0.3.tgz#bae36c718f930b20bf751351436e3b3a0cb57c23"
-  integrity sha1-uuNscY+TCyC/dRNRQ247Ogy1fCM=

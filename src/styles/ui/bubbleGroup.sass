@@ -1,0 +1,41 @@
+@import 'card'
+
+.mgui-bubbleGroup
+	position: relative
+	margin: .3em 0
+
+	&:after
+		content: ''
+		display: block
+		clear: both
+
+	&.has-avatar
+		padding-left: $mgAvatarSize * 1.2
+
+	&-avatar
+		position: absolute
+		bottom: .3em
+		left: 0
+		.avatar
+			font-size: $mgAvatarSize
+
+	&-elements > *
+		clear: both
+
+	&.is-their &-elements > *
+		float: left
+
+		&:not(:first-child)
+			@inclue join-tl
+
+		&:not(:last-child)
+			@inclue join-bl
+
+	&.is-our &-elements > *
+		float: right
+
+		&:not(:first-child)
+			@inclue join-tr
+
+		&:not(:last-child)
+			@inclue join-br

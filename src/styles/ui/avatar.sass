@@ -1,0 +1,31 @@
+.mgui-avatar
+	display: inline-block
+	vertical-align: top
+	position: relative
+	font-size: $mgAvatarSize
+	line-height: 1
+
+	&-img
+		overflow: hidden
+		border-radius: 50em
+		width: 1em
+		vertical-align: top
+		line-height: 1
+
+	&-badge
+		position: absolute
+		right: 0
+		bottom: .0
+		background: $mgBorderGrey
+		width: 15px
+		height: 15px
+		border: solid 2px $mgBgWhite
+		border-radius: 15px
+
+		&.type-away
+			background: $mgBorderGrey
+
+		&.type-online
+			background: $mgBlue
+
+

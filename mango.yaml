@@ -2,9 +2,8 @@
 src_folder: src
 dist_folder: dist
 styles:
-- src/styles/index.styl
-- src/styles/oldie.styl
-- src/styles/print.styl
+- src/styles/index.sass
+- src/styles/guide.sass
 scripts:
 - src/scripts/index.es6
 images:
@@ -21,6 +20,4 @@ templates:
 - src/templates/*.pug
 data:
   global: src/data/global.json
-hooks:
-  init: mango install
 version: ">=3.1.0"
